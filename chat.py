@@ -50,7 +50,7 @@ def get_ai_message(user_message):
     tax_chain = {"query": dictionary_chain} | qa_chain
     ai_message = tax_chain.invoke({"question": user_message})
 
-    return ai_message
+    return ai_message['result']
 
 
 if user_question := st.chat_input(placeholder="소득세에 관련된 궁금한 내용들을 말씀해주세요!"):
